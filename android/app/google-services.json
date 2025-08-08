@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "46677320809",
+    "project_id": "agape1",
+    "storage_bucket": "agape1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:46677320809:android:312c4c8dbe4fd9f6df6ef8",
+        "android_client_info": {
+          "package_name": "com.agape.agape1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTuzmBhbqbfe-O_eYbgFYpmVLNiQQkpok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
