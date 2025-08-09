@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -23,6 +24,21 @@ class _LoginScreenState extends State<LoginScreen> {
       debugPrint('Logging in with email: ${_emailController.text}');
 
       setState(() => _isLoading = false);
+    }
+  }
+
+  Future<void> _contactSchool() async {
+    // Replace with your school's WhatsApp number (with country code, no spaces)
+    const String phoneNumber = '26876123456';
+    const String message = 'Hello, I would like to request a school account.';
+    final Uri whatsappUri = Uri.parse(
+      'https://wa.me/$phoneNumber?text=${Uri.encodeComponent(message)}',
+    );
+
+    if (await canLaunchUrl(whatsappUri)) {
+      await launchUrl(whatsappUri, mode: LaunchMode.externalApplication);
+    } else {
+      debugPrint('Could not launch WhatsApp');
     }
   }
 
@@ -68,8 +84,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
               const SizedBox(height: 16),
               TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: const Text('Don\'t have an account? Register'),
+                onPressed: _contactSchool,
+                child: const Text("Don't have an account? Contact the school"),
               ),
             ],
           ),

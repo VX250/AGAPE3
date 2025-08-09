@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'register_screen.dart';
-// import 'login_screen.dart'; // we'll add this soon
-import 'login_screen.dart';
-//import 'package:agape1/screens/admin/role_based_redirect.dart';
-
-//agape1\lib\screens\admin
+import 'login_screen.dart'; // Keep only login
+// import 'register_screen.dart'; // REMOVE this import
 
 void main() async {
   runApp(const AgapeApp());
@@ -53,20 +49,8 @@ class WelcomeScreen extends StatelessWidget {
                     context,
                     MaterialPageRoute(builder: (_) => const LoginScreen()),
                   );
-                  // TODO: Navigate to Login Screen
                 },
                 child: const Text('Login'),
-              ),
-              const SizedBox(height: 20),
-
-              OutlinedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => const RegisterScreen()),
-                  );
-                },
-                child: const Text('Register'),
               ),
             ],
           ),
